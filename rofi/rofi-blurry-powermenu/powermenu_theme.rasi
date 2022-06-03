@@ -1,0 +1,68 @@
+/*  
+ *
+ *  Rofi theme for fullscreen powermenu
+ *
+ *  Author: Lucero Alvarado
+ *  Github: @lu0
+ *
+*/
+
+* {
+  title-margins:          4.62% 9.5%;               /* Modify 2nd % if needed */
+  content-position:       27.7% 20.8%;      
+  space-between-options:  2.5%;
+  option-inset-padding:   4.1% 2.6% 2.5% -4.1%;
+
+  window-bg-color:        rgba(15, 15, 15, 0.7);
+  title-text-color:       rgba(141, 145, 148, 1);
+  selected-bg-color:      rgba(100, 100, 100, 0.4);
+  unselected-bg-color:    rgba(100, 100, 100, 0.05);
+  selected-text-color:    #FFFFFF;
+  unselected-text-color:  #FFFFFF;
+
+}
+
+#window {
+  width:              100%;
+  height:             100%;
+  x-offset:           0%;
+  y-offset:           0%;
+  padding:            @content-position;
+  background-color:   @window-bg-color;
+  children:           [ inputbar, horibox ];
+}
+
+#inputbar {
+  children: [ prompt ];
+  margin: @title-margins;
+  background-color: transparent;
+}
+
+prompt {
+  text-color: @selected-text-color;
+  background-color: transparent;
+}
+
+#horibox {
+  background-color: transparent;
+  children: [ listview ];
+}
+
+#listview {
+  layout: horizontal;
+  background-color: transparent;
+  spacing: @space-between-options;
+  lines: 5;
+}
+
+#element {
+  text-color:         @unselected-text-color;
+  padding:            @option-inset-padding;
+  border-radius:      50%;
+  background-color:   @unselected-bg-color;
+}
+
+#element.selected {
+  text-color:         @selected-text-color;
+  background-color:   @selected-bg-color;
+}

@@ -1,0 +1,8 @@
+[general]
+base_currency = NZD
+display = price
+
+[bitcoin]
+icon =     
+
+
